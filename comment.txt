@@ -1,0 +1,11 @@
+<div class="container" style="max-width: 30rem;">
+    <?php
+    require 'db.php';
+    $stmt = $pdo->query('SELECT `namear`,`descriptionar`,comment.`namecom` FROM `article` INNER JOIN `comment` ON `article`.`id_comm` = `comment`.`id`')->fetch();
+    ?>
+    <h1><?= $stmt['namear'] ?></h1>
+    <p><?= $stmt['descriptionar'] ?></p>
+    <p class="card-text"><small class="text-muted">Date 01.10.2020 Time 8:50</small></p>
+    <h5>Comments</h5>
+    <p><?= $stmt['namecom'] ?></p>
+</div>
